@@ -1,0 +1,28 @@
+repository untuk mengelola praktikum ADP 2024
+
+Nama : Ariska Fadhilla Z 
+Nim : 2310433002
+Shift : 1
+
+program menghitungluaspermukaanbalok;
+uses crt;
+var  
+   panjang,lebar,tinggi,luas:integer;
+begin
+clrscr;
+      writeln('nama=Ariska Fadhilla Z');
+      writeln('nim=2310433002');
+      writeln('shift 1');
+      writeln('program menghitung luas permukaan balok');
+      write('panjang=');
+      readln(panjang);
+      write('lebar=');
+      readln(lebar);
+      write('tinggi=');
+      readln(tinggi);
+      luas:=2*((panjang*lebar)+(panjang*tinggi)+(lebar*tinggi));
+      writeln('luas permukaan balok=',luas);
+      writeln('jadi luas permukaan baloknya adalah=',luas);
+      readln();
+end.
+      
