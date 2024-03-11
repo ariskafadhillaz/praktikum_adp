@@ -1,0 +1,25 @@
+repository untuk mengelola praktikum ADP 2024
+
+Nama : Ariska Fadhilla Z
+Nim : 2310433002
+Shift : 1
+
+program perkaliansederhana;
+uses crt;
+var
+   s,d,hasil:integer;
+begin
+clrscr;
+      writeln('nama=Ariska Fadhilla Z');
+      writeln('nim=2310433002');
+      writeln('shift 1');
+      writeln('program_perkalian_sederhana');
+      write('s=');
+      readln(s);
+      write('d=');
+      readln(d);
+      hasil:=s*d;
+      writeln('hasil perkalian=',hasil);
+      writeln('maka hasil perkalian s kali d adalah',hasil);
+      readln();
+end.
