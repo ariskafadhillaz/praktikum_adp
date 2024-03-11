@@ -1,0 +1,23 @@
+repository untuk mengelola praktikum ADP 2024
+
+Nama : Ariska Fadhilla Z
+Nim : 2310433002
+Shift : 1
+
+program menghitung_volume_bola;
+uses crt;
+var
+  r,volume:real;
+  const phi=3.14;
+begin
+clrscr;
+      writeln('nama=Ariska Fadhilla Z');
+      writeln('nim=2310433002');
+      writeln('shift 1');
+      writeln('menghitung volume bola');
+      write('jari-jari=');
+      readln(r);
+      volume:=4/3*3.14*r*r*r;
+      writeln('volume=',volume);
+      writeln('jadi volume bolanya ialah=',volume);
+end.
