@@ -1,0 +1,92 @@
+repository untuk mengelola praktikum ADP 2024
+
+Nama : Ariska Fadhilla Z 
+Nim : 2310433002
+Shift : 1
+
+program memesan menu di sebuah restoran
+
+print("==============W E L C O M E T O D A I S Y C A F E==============")
+pembeli = input("nama pembeli : ")
+print('nama pembeli : ')
+
+def makanan():
+    global totalmakanan
+    global porsi
+    global makanan
+    print("=========MENU MAKANAN=========")
+    print('1 .Nasi Goreng  Rp.15000')
+    print('2 .Mie Goreng  Rp.12000')
+    print('3 .Ayam Geprek  Rp.20000')
+    print('4 .tidak membeli makanan Rp.0')
+    nomor =int (input("masukkan pilihan 1/2/3/4 : "))
+    porsi=int(input("berapa porsi : "))         
+
+    if nomor == 1:
+        totalmakanan =porsi* 15000
+        print(porsi,'Nasi Goreng = Rp.',totalmakanan)
+        makanan=("Nasi Goreng")
+    elif nomor == 2:
+        totalmakanan =porsi*12000
+        print(porsi,'Mie Goreng = Rp.',totalmakanan)
+        makanan=("Mie Goreng")
+    elif nomor == 3:
+        totalmakanan =porsi*20000
+        print(porsi,'Ayam Geprek = Rp.',totalmakanan)
+        makanan=("Ayam Geprek")
+    elif nomor == 4:
+        totalmakanan = 0
+        print(porsi,"tidak membeli makanan ")
+    else:
+        print("pilihan tidak tersedia di daftar menu")
+        makanan()
+    
+def minuman():
+    global totalminuman
+    global cup
+    global minuman
+    print("========MENU MINUMAN=========")
+    print('1 .Es Teh  Rp.7000')
+    print('2 .Brown Sugar   Rp.15000')
+    print('3 .Cappucino   Rp.15000')
+    print('4 .tidak membeli  minuman Rp.0')
+    nomor =int(input("masukkan pilihan 1/2/3/4: "))
+    cup=int(input("berapa gelas : "))
+    if nomor == 1:
+        totalminuman =cup*7000
+        print(cup,'Es Teh = Rp.',totalminuman)
+        minuman=("Es Teh")
+    elif nomor == 2:
+        totalminuman =cup*15000
+        print(cup,'Brown Sugar = Rp.',totalminuman)
+        minuman=("Brown Sugar")
+    elif nomor == 3:
+        totalminuman =cup*15000
+        print(cup,'Cappucino = Rp.',totalminuman)
+        minuman=("Cappucino")
+    elif nomor == 4:
+        totalminuman =0
+        print(cup,"tidak membeli minuman ")
+    else:
+        print("pilihan tidak tersedia di daftar menu")
+        minuman()
+
+makanan()
+minuman()
+total_semua = totalmakanan + totalminuman
+
+print("total yang harus dibayar : ",total_semua)
+uang = int(input("uang tunai pembeli : "))
+kembalian = int(uang - total_semua)
+print('kembalian : ',kembalian)
+print("---------------------------------------")
+print("==========D A I S Y C A F E==========")
+print("jln.bunga no 1")
+print("Nama : ",pembeli)
+print("beli :",porsi,makanan,"(Rp.",totalmakanan,")")
+print("beli :", cup,minuman,"(Rp.",totalminuman,")")
+print("Tagihan : Rp.",total_semua)
+print("Dibayar : Rp.",uang)
+print("Kembalian : Rp.",kembalian)
+
+print("======================================")
