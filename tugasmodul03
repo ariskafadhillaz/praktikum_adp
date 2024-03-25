@@ -1,0 +1,44 @@
+repository untuk mengelola praktikum ADP 2024
+
+Nama : Ariska Fadhilla Z 
+Nim : 2310433002
+Shift : 1
+
+print("========= MODUL 3 PERULANGAN=======")
+print("""---------menu-------------------
+       | kode | MENU                 |
+       | 1    | Tabel Perkalian      |
+       | 2    | Tabel Penjumlahan    | 
+       | 3    | Keluar               |
+      ----------------------------------""")
+print()
+kode = int(input("kode  1/2/3="))
+if kode==1:
+ n = int(input("masukkan nilai n(1-10):"))
+print(" tabel perkalian ")
+n = int(input("n ="))
+for i in range (1, n+1):
+  print(i, end="\t")
+print()
+print("\n")
+for j in range (1, n+1):
+ for k in range (1, n+1):
+  print(j * k, end = "\t")
+print("\n")
+
+
+if kode==2:
+ n = int(input("masukkan nilai n(1-10):"))
+print(" tabel penjumlahan ")
+n= int(input("n ="))
+for i in range (n+1):
+ print(i, end="\t")
+print()
+print("\n")
+for j in range (n+1):
+ for k in range (n+1):
+  print(j + k, end = "\t")
+print("\n")
+
+if kode==3:
+ print("kode tidak valid")
