@@ -1,0 +1,25 @@
+repository untuk mengelola praktikum ADP 2024
+
+Nama : Ariska Fadhilla Z 
+Nim : 2310433002
+Shift : 1
+
+alpabet='abcdefghijklmnopqrstuvwxyz'
+
+print()
+print('====program caesar cipher=====')
+print()
+string_input=input("masukkan teks baru :")
+panjang_karakter =len(string_input)
+print(string_input)
+print(panjang_karakter)
+
+string_output=""
+
+for i in range (panjang_karakter):
+  karakter = string_input[i]
+  karakter_awal = alpabet.find(karakter)
+  karakter_baru = karakter_awal + 2
+  string_output += alpabet[karakter_baru]
+
+print("Teks dienkripsi menjadi :",string_output)
