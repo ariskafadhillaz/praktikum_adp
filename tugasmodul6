@@ -1,0 +1,29 @@
+repository untuk mengelola praktikum ADP 2024
+
+Nama : Ariska Fadhilla Z 
+Nim : 2310433002
+Shift : 1
+#jadwal penerbangan
+jadwal_penerbangan=[
+    ["jakarta","surabaya","08:00","09:30"],
+    ["yogyakarta","bali","10:30","11:45"],
+    ["medan","bandung","12:15","13:30"],
+]
+print("{:<15} {:<15} {:<15} {:<15}".format("kota asal", "kota tujuan", "keberangkatan","kedatangan"))
+print("=" *60)
+for penerbangan in jadwal_penerbangan:
+    print("{:<15} {:<15} {:<15} {:<15}".format(*penerbangan))
+
+#mencari rute dengan waktu terpendek
+rute_s = int(input("nomor rute s: "))
+rute_d= int(input("nomor rute d: "))
+rute_1=["jakarta","surabaya"]
+rute_2=["yogyakarta","bali"]
+rute_3=["medan","bandung"]
+if rute_s == 1 and rute_d == 2:
+ print("rute yang tercepat antara ", rute_1, "dan", rute_2, "adalah",rute_2)
+if rute_s == 1 and rute_d == 3:
+ print("rute yang tercepat antara ",rute_1, "dan", rute_3, "adalah", rute_3)
+if rute_s == 2 and rute_d == 3:
+ print("rute yang tercepat antara ", rute_2, "dan", rute_3, "adalah", rute_3)
+
