@@ -1,0 +1,68 @@
+repository untuk mengelola praktikum ADP 2024
+
+Nama : Ariska Fadhilla Z 
+Nim : 2310433002
+Shift : 1
+
+print("jadwal= []")
+def tambah_kegiatan(jadwal):
+    kegiatan = input("Masukkan kegiatan: ")
+    waktu_mulai = input("Masukkan waktu mulai kegiatan (HH:MM): ")
+    waktu_selesai = input("Masukkan waktu selesai kegiatan (HH:MM): ")
+    jadwal.append([kegiatan,waktu_mulai, waktu_selesai])
+    print("jadwal Kegiatan berhasil ditambahkan!")
+    return jadwal
+
+def hapus_kegiatan(jadwal):
+    if not jadwal:
+        print("Jadwal kosong.")
+    else:
+        print("Jadwal:")
+        print("No. kegiatan  waktu mulai  waktu selesai ")
+        for j in range(len(jadwal)):
+            kegiatan = jadwal[j]
+            print(f"{j+1}    {kegiatan[0]}        {kegiatan[1]}         {kegiatan[2]}")
+        
+        j_hapus = int(input("Masukkan nomor kegiatan yang mau dihapus: ")) - 1
+        if j_hapus < len(jadwal):
+            jadwal_baru = jadwal[j_hapus] + jadwal[j_hapus+1]
+            print("Kegiatan sudah dihapus!")
+            return jadwal_baru
+        else:
+            print("Nomor tidak valid.")
+
+    return jadwal
+
+def tampilkan_jadwal(jadwal):
+    if not jadwal:
+        print("Jadwal kosong.")
+    else:
+        print("Jadwal:")
+        print("No. kegiatan   waktu mulai  waktu selesai ")
+        for j in range(len(jadwal)):
+            kegiatan = jadwal[j]
+            print(f"{j+1}    {kegiatan[0]}       {kegiatan[1]}       {kegiatan[2]}")
+
+    return jadwal
+
+jadwal= []
+
+while True:
+    print("\nMenu:")
+    print("1. Tambah Kegiatan")
+    print("2. Hapus Kegiatan")
+    print("3. Tampilkan Jadwal")
+    print("4. Keluar")
+
+    pilihan = input("Masukkan pilihan (1-4): ")
+
+    if pilihan == "1":
+        jadwal = tambah_kegiatan(jadwal)
+    elif pilihan == "2":
+        jadwal = hapus_kegiatan(jadwal)
+    elif pilihan == "3":
+        tampilkan_jadwal(jadwal)
+    elif pilihan == "4":
+        break
+    else:
+        print("Pilihan tidak valid. Silakan coba lagi.")
