@@ -1,0 +1,49 @@
+repository untuk mengelola praktikum ADP 2024
+
+Nama : Ariska Fadhilla Z 
+Nim : 2310433002
+Shift : 1
+#bendera indonesia
+from termcolor import colored, cprint
+import os
+
+os.system('cls')
+for i in range (1):
+	cprint(" "*10,"red","on_light_red",end="")
+	print(" ",end= " ")
+for i in range (1):
+	cprint(" "*10,"red","on_white",end=" ")
+		print(" ",end= " ")
+		print()
+
+#rumah
+from termcolor import cprint
+
+def print_house():
+    roof = [
+     "    /\\---------------",
+     "   /  \\              \\",         
+     "  /    \\              \\ ",
+     " /      \\              \\",
+"/__________\\_________________"
+        ]
+    
+    for line in roof:
+        cprint(line, 'red')
+
+    
+    for _ in range(2):
+        cprint("|" + " " *23+ "|", 'yellow', 'on_yellow',)
+        print("",end="")
+        
+    for i in range(1):
+    	cprint("| " + " "*1 , 'white', 'on_yellow',  end=" ")
+    	cprint(" "*2 , 'white', 'on_black', end=" ")
+    	cprint(" " *17 + "|", 'white', 'on_yellow')
+    for i in range(2):
+    	cprint("| " + " "*1 , 'white', 'on_yellow',  end=" ")
+    	cprint(" "*2 , 'white', 'on_black', end=" ")
+    	cprint(" " *17 + "|", 'white', 'on_yellow')
+    	
+if _name_ == "_main_":
+    print_house()
