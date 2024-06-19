@@ -1,0 +1,186 @@
+kode program uap kelompok 19
+anggota: 1. Nasyawa Adila Rahma (2310433022)
+         2. Ariska Fadhilla Z (2310433002)
+program bc food
+
+import os
+from termcolor import cprint
+os.system('cls' if os.name == 'nt' else 'clear')
+baris = 14
+kolom = 25
+lebar = 150
+for _ in range(baris):
+    cprint(" " * lebar, 'white', 'on_green')
+cprint(" " * lebar, 'green', 'on_white')
+def BCFOOD(baris, panjang):
+    kiri = (lebar - panjang) // 2
+    cprint(" " * kiri, 'green', 'on_green', end="")
+    for char in baris:
+        if char != ' ':
+            cprint(" ", 'green', 'on_green', end="")
+        else:
+            cprint(" ", 'green', 'on_white', end="")
+    kanan = lebar - kiri - panjang
+    cprint(" " * kanan, 'green', 'on_white')
+    print(end="")
+ 
+BCFOOD("            ______________      _____________       _____________     _______________    _______________    ______________                            ", 500)
+BCFOOD("            ______________      _____________       _____________     _______________    _______________    ________________                          ", 500)
+BCFOOD("            ____      ____      _____               _____             ____       ____    ____       ____    ____        ____                          ", 500)
+BCFOOD("            ____      ____      _____               _____             ____       ____    ____       ____    ____        ____                          ", 500)
+BCFOOD("            ____     ____       _____               _____________     ____       ____    ____       ____    ____        ____                          ", 500)
+BCFOOD("            ___________         _____               _____________     ____       ____    ____       ____    ____        ____                          ", 500)
+BCFOOD("            ____     ____       _____               _____             ____       ____    ____       ____    ____        ____                          ", 500)
+BCFOOD("            ____      ____      _____               _____             ____       ____    ____       ____    ____        ____                          ", 500)
+BCFOOD("            ____      ____      _____               _____             ____       ____    ____       ____    ____        ____                          ", 500)
+BCFOOD("            ______________      _____________       _____             _______________    _______________    ________________                          ", 500)
+BCFOOD("            ______________      _____________       _____             _______________    _______________    ______________                            ", 500)
+cprint(" " * lebar, 'green', 'on_white')
+for _ in range(kolom - 30):  
+    cprint(" " * lebar, 'green', 'on_white')
+for _ in range(baris):
+    cprint(" " * lebar, 'green','on_green')
+import os
+import time
+detik = int(input("detik : "))
+for i in reversed (range(detik+1)):  
+    print('',i)
+    os.system('cls')
+    time.sleep(1)
+    
+import os
+os.system('cls')
+
+
+print("Hai! Selamat datang di BC Food!","\nTempat di mana setiap hidangan dibuat dengan cinta dan keahlian. Nikmati makanan kami dan rasakan perbedaannya!\n" )
+
+menu= {
+    "\nMakanan" : [
+        {"nama": "Pecel Ayam", "harga": 13000},
+        {"nama": "Batagor", "harga": 12000},
+        {"nama": "Nasi Goreng", "harga": 10000},
+        {"nama": "Minas", "harga": 12000},
+        {"nama": "Bakso", "harga": 13000},
+        {"nama": "Nasi Ampera", "harga": 10000},
+    ],
+    "\nMinuman" : [
+        {"nama": "Teh Es", "harga": 5000},
+        {"nama": "Capcin", "harga": 7000},
+        {"nama": "Jeruk Peras", "harga": 5000},
+        {"nama": "Jus Jambu", "harga": 10000},
+        {"nama": "Jus Mangga", "harga": 10000},
+        {"nama": "Air Mineral", "harga": 3000},
+    ]
+}
+
+pesanan = []
+
+def tampilkan_menu():
+    print("Menu:")
+    for kategori, item in menu.items():
+        print(f"{kategori}:")
+        for i, item in enumerate(item, 1):
+            print(f"  {i}. {item['nama']} - Rp {item['harga']}")
+
+def ambil_pesanan():
+    tampilkan_menu()
+    pesan = {}
+    pesan["nama_pelanggan"] = input("\nMasukkan nama Anda: ")
+    pesan["nomor_meja"] = int(input("Masukkan nomor meja Anda: "))
+    pesan["pesanan"] = []
+    while True:
+        pilihan = input("\nMasukkan nomor pesanan Anda (atau 'selesai' untuk menyelesaikan pesanan): ")
+        if pilihan.lower() == "selesai":
+            break
+        for kategori, item in menu.items():
+            for i, item in enumerate(item, 1):
+                if pilihan == str(i):
+                    pesan["pesanan"].append({"nama": item["nama"], "harga": item["harga"]})
+                    print(f"Anda telah memesan {item['nama']} - Rp {item['harga']}")
+                    break
+    pesanan.append(pesan)
+
+
+from termcolor import colored
+
+def tampilkan_pesanan():
+    print(colored("Pesanan:", 'red'))
+    print("==============================================")
+    print(colored("{:<3} {:<15} {:<5} {:<10}".format("No", "Nama Pelanggan", "Meja", "harga"), 'green'))
+    print("==============================================")
+    for i, pesan in enumerate(pesanan, 1):
+        total = 0
+        print(colored("{:<3} {:<15} {:<5} Rp {:<10}".format(i, pesan['nama_pelanggan'], pesan['nomor_meja'],0), 'yellow'))
+        for item in pesan["pesanan"]:
+            print(colored("    - {:<20} Rp {:<10}".format(item['nama'], item['harga']), 'magenta'))
+            total += item["harga"]
+        print(colored("    Total: Rp {:<10}".format(total), 'yellow'))
+        if "status_pembayaran" in pesan and pesan["status_pembayaran"] == "Lunas":
+            print(colored("    Status Pembayaran: Lunas", 'green'))
+        else:
+            print(colored("    Status Pembayaran: Belum Lunas", 'red'))
+        print("----------------------------------------------")
+    print("==============================================")
+
+def proses_pembayaran(pesan):
+    total = 0
+    for item in pesan["pesanan"]:
+        total += item["harga"]
+    print(f"\nTotal yang harus dibayar: Rp {total}")
+    metode_pembayaran = input("\nMasukkan metode pembayaran (tunai/kartu kredit): ")
+    if metode_pembayaran.lower() == "tunai":
+        uang = int(input("Masukkan jumlah uang: "))
+        if uang >= total:
+            kembalian = uang - total
+            print(f"\nKembalian: Rp {kembalian}")
+            pesan["status_pembayaran"] = "Lunas"
+        else:
+            print("Uang anda tidak cukup")
+    elif metode_pembayaran.lower() == "kartu kredit":
+        nomor_kartu = input("Masukkan nomor kartu kredit: ")
+        uang = int(input("Masukkan jumlah uang: Rp. "))
+        kode_keamanan = input("Masukkan kode keamanan: ")
+        print("Pembayaran berhasil")
+        pesan["status_pembayaran"] = "Lunas"
+    else:
+        print("Metode pembayaran tidak valid")
+
+
+def simpan_pesanan():
+    with open("pesanan.txt", "w") as f:
+        for pesan in pesanan:
+            f.write(f"Pesanan dari {pesan['nama_pelanggan']} (Meja {pesan['nomor_meja']}):\n")
+            for item in pesan["pesanan"]:
+                f.write(f"  - {item['nama']} - Rp {item['harga']}\n")
+            f.write("\n")
+import time
+import os
+while True:
+    
+    print("BC FOOD")
+    print("1. Ambil pesanan")
+    print("2. Tampilkan pesanan")
+    print("3. Proses pembayaran")
+    print("4. Simpan pesanan ke file")
+    print("5. Keluar")
+    pilihan = input("Masukkan pilihan Anda: ")
+
+    if pilihan == "1":
+        ambil_pesanan()
+        time.sleep(1) 
+        os.system('cls' if os.name == 'nt' else 'clear') 
+    elif pilihan == "2":
+        tampilkan_pesanan()
+        time.sleep(8) 
+        os.system('cls' if os.name == 'nt' else 'clear') 
+    elif pilihan == "3":
+        nomor_pesanan = int(input("Masukkan nomor orderan untuk memprosen pesanan : "))
+        proses_pembayaran(pesanan[nomor_pesanan - 1])
+        time.sleep(8) 
+        os.system('cls' if os.name == 'nt' else 'clear') 
+    elif pilihan == "4" :
+        simpan_pesanan()
+    elif pilihan == "5" :
+        break
+    else: 
+        print("Tidak Dapat di Proses")
